@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  Game
+//  MyGame
 //
-//  Created by ITHS on 2020-03-12.
+//  Created by ITHS on 2020-03-09.
 //  Copyright © 2020 ITHS. All rights reserved.
 //
 
@@ -15,36 +15,21 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+        if let view = view as? SKView {
             
+            let scene = GameMenu(size: view.bounds.size)
+            scene.scaleMode = .resizeFill
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = true
             view.showsNodeCount = true
+            view.presentScene(scene)
+
+            }
+
         }
-    }
-
-    override var shouldAutorotate: Bool {
-        return true
-    }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
-}
+    }
+
