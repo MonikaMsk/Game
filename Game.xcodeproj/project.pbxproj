@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7F11729D24329F49008A4C6E /* GameMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11729C24329F49008A4C6E /* GameMenu.swift */; };
-		7F11729F243674C3008A4C6E /* GameMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = 7F11729E243674C3008A4C6E /* GameMenu.sks */; };
+		7F1172A12436A0B0008A4C6E /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1172A02436A0B0008A4C6E /* GameOverScene.swift */; };
+		7F1172A32436A451008A4C6E /* HighScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1172A22436A451008A4C6E /* HighScoreScene.swift */; };
 		7F8F29AE242D5D760098CFCA /* Penguin.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 7F8F29AD242D5D750098CFCA /* Penguin.atlas */; };
 		7FA6D77F241A8B8D005ACE1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6D77E241A8B8D005ACE1A /* AppDelegate.swift */; };
 		7FA6D785241A8B8D005ACE1A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA6D784241A8B8D005ACE1A /* GameScene.swift */; };
@@ -20,7 +21,8 @@
 
 /* Begin PBXFileReference section */
 		7F11729C24329F49008A4C6E /* GameMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenu.swift; sourceTree = "<group>"; };
-		7F11729E243674C3008A4C6E /* GameMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameMenu.sks; sourceTree = "<group>"; };
+		7F1172A02436A0B0008A4C6E /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		7F1172A22436A451008A4C6E /* HighScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreScene.swift; sourceTree = "<group>"; };
 		7F8F29AD242D5D750098CFCA /* Penguin.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Penguin.atlas; sourceTree = "<group>"; };
 		7FA6D77B241A8B8D005ACE1A /* Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA6D77E241A8B8D005ACE1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +68,8 @@
 				7FA6D784241A8B8D005ACE1A /* GameScene.swift */,
 				7FA6D786241A8B8D005ACE1A /* GameViewController.swift */,
 				7F11729C24329F49008A4C6E /* GameMenu.swift */,
-				7F11729E243674C3008A4C6E /* GameMenu.sks */,
+				7F1172A02436A0B0008A4C6E /* GameOverScene.swift */,
+				7F1172A22436A451008A4C6E /* HighScoreScene.swift */,
 				7FA6D788241A8B8D005ACE1A /* Main.storyboard */,
 				7F8F29AD242D5D750098CFCA /* Penguin.atlas */,
 				7FA6D78B241A8B8E005ACE1A /* Assets.xcassets */,
@@ -134,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F11729F243674C3008A4C6E /* GameMenu.sks in Resources */,
 				7FA6D78A241A8B8D005ACE1A /* Main.storyboard in Resources */,
 				7FA6D78C241A8B8E005ACE1A /* Assets.xcassets in Resources */,
 				7F8F29AE242D5D760098CFCA /* Penguin.atlas in Resources */,
@@ -149,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F1172A12436A0B0008A4C6E /* GameOverScene.swift in Sources */,
 				7F11729D24329F49008A4C6E /* GameMenu.swift in Sources */,
 				7FA6D785241A8B8D005ACE1A /* GameScene.swift in Sources */,
+				7F1172A32436A451008A4C6E /* HighScoreScene.swift in Sources */,
 				7FA6D787241A8B8D005ACE1A /* GameViewController.swift in Sources */,
 				7FA6D77F241A8B8D005ACE1A /* AppDelegate.swift in Sources */,
 			);

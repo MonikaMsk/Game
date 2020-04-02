@@ -29,7 +29,7 @@ class GameMenu: SKScene{
 
                 if node == playButton {
                     if let view = view {
-                        let transition:SKTransition = SKTransition.fade(withDuration: 1)
+                        let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
                         let scene:SKScene = GameScene(size: self.size)
                         self.view?.presentScene(scene, transition: transition)
                     }
