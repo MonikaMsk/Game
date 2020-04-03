@@ -6,11 +6,15 @@
 //  Copyright © 2020 ITHS. All rights reserved.
 //
 
-import Foundation
 import SpriteKit
+import FirebaseDatabase
 
 class GameOver: SKScene {
     
+    
+ 
+
+  
     var scoreLabel:SKLabelNode!
     var score:Int = 0
 
@@ -18,6 +22,8 @@ class GameOver: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
         
+        
+        //score label
         scoreLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.color = SKColor.white
@@ -27,6 +33,11 @@ class GameOver: SKScene {
         addChild(scoreLabel)
         
       print(score)
+        
+        
+        let ref = Database.database().reference()
+        ref.child("high-score").setValue(score)
+        
         
     }
     
