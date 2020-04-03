@@ -16,7 +16,7 @@ class GameOver: SKScene {
 
     
     override func didMove(to view: SKView) {
-        backgroundColor = SKColor.
+        backgroundColor = SKColor.black
         
         scoreLabel = SKLabelNode(fontNamed: "AppleSDGothicNeo-Bold")
         scoreLabel.text = "Score: \(score)"
