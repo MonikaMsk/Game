@@ -36,7 +36,7 @@ class GameOver: SKScene {
         
         
         let ref = Database.database().reference()
-        ref.child("high-score").setValue(score)
+        ref.childByAutoId().setValue(["high-score": score])
         
         
     }
