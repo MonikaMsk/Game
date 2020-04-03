@@ -14,6 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
     private var player = SKSpriteNode()
     private var platform = SKSpriteNode()
     private var dimond = SKSpriteNode()
+    private var highScoreBtn = SKSpriteNode()
+   
     
     //textures
     private var penguinWalking:[SKTexture] = []
@@ -39,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
        
        var counter = 0
        var counterTimer = Timer()
-       var counterStart = 30
+       var counterStart = 5
     
     
     //score
@@ -118,12 +120,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
     
     
     
-     func gameOver(won:Bool){
-          print("Game over!")
-          removeAllActions()
-          player.isHidden = true
-         
-      }
+    func gameOver(won:Bool){
+        print("Game over!")
+        removeAllActions()
+        player.isHidden = true
+ 
+        let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
+        var gameOverScene = GameOver(size: self.size)
+        gameOverScene.score = self.score
+        self.view?.presentScene(gameOverScene, transition: transition)
+     
+        
+    }
+    
+      
     
     
     
@@ -203,6 +213,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
         
     }
     
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        let collison: UInt32 = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+      
+      if collison == dimondCategory | playerCategory{
+          dimond.removeFromParent()
+          score += 1
+     
+      }
+    
+      
+      }
+    
     func createDimond(){
         dimond = SKSpriteNode(imageNamed: "Gem")
         let positionX = random(min: dimond.size.width / 2, max: size.width - dimond.size.width / 2)
@@ -233,28 +256,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
     func random(min:CGFloat, max:CGFloat) -> CGFloat{
         return random() * (max-min) + min
     }
-    
-    func didBegin(_ contact: SKPhysicsContact) {
-        let collison: UInt32 = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
-      
-      if collison == dimondCategory | playerCategory{
-          dimond.removeFromParent()
-          score += 1
-     
-      }
-    
-      
-      }
-    
-    
+
 }
-
-
-
-
-
-
-
 
 
 
