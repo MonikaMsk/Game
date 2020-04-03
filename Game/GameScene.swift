@@ -41,7 +41,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate  {
        
        var counter = 0
        var counterTimer = Timer()
-       var counterStart = 5
+       var counterStart = 15
     
     
     //score

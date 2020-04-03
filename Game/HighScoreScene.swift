@@ -12,11 +12,13 @@ import FirebaseDatabase
 
 class HighScore: SKScene {
     
+    let ref = Database.database().reference()
+    
     override func didMove(to view: SKView) {
     
-       
-        }
         
     }
+
+}
     
 

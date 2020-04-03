@@ -15,24 +15,18 @@ class GameMenu: SKScene{
     var playButton = SKSpriteNode()
     let playButtonTex = SKTexture(imageNamed: "Play")
     var background = SKSpriteNode(imageNamed: "bg2")
-    
-    var highScore = SKSpriteNode()
-    let highScoreTex = SKTexture(imageNamed: "HighScoree")
+   
     
     override func didMove(to view: SKView) {
         
         
         playButton = SKSpriteNode(texture: playButtonTex)
-        playButton.position = CGPoint(x: frame.midX, y: frame.midY + 50)
+        playButton.position = CGPoint(x: frame.midX, y: frame.midY)
         self.addChild(playButton)
         background.zPosition = -1
         self.addChild(background)
         
-        
-        highScore = SKSpriteNode(texture: highScoreTex)
-        highScore.position = CGPoint(x:frame.midX, y: frame.midY - 50)
-        self.addChild(highScore)
-        
+   
         
     }
     
@@ -48,15 +42,7 @@ class GameMenu: SKScene{
                     self.view?.presentScene(scene, transition: transition)
                 }
             }
-            
-            if node == highScore{
-                if let view = view {
-                                   let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
-                                   let scene:SKScene = HighScore(size: self.size)
-                                   self.view?.presentScene(scene, transition: transition)
-                               }
-                
-            }
+      
         }
     }
 }

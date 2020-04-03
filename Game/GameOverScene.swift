@@ -12,7 +12,8 @@ import FirebaseDatabase
 class GameOver: SKScene {
     
     
- 
+   var playButton = SKSpriteNode()
+   let playButtonTex = SKTexture(imageNamed: "Play")
 
   
     var scoreLabel:SKLabelNode!
@@ -21,6 +22,10 @@ class GameOver: SKScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.black
+        
+        playButton = SKSpriteNode(texture: playButtonTex)
+        playButton.position = CGPoint(x: frame.midX, y: frame.midY - 50)
+        self.addChild(playButton)
         
         
         //score label
@@ -40,6 +45,23 @@ class GameOver: SKScene {
         
         
     }
+    
+    
+       override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           if let touch = touches.first {
+               let pos = touch.location(in: self)
+               let node = self.atPoint(pos)
+               
+               if node == playButton {
+                   if let view = view {
+                       let transition:SKTransition = SKTransition.fade(withDuration: 0.5)
+                       let scene:SKScene = GameScene(size: self.size)
+                       self.view?.presentScene(scene, transition: transition)
+                   }
+               }
+         
+           }
+       }
     
     
     
